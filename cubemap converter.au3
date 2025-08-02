@@ -17,7 +17,7 @@ Global $sNvdxt = @ScriptDir & '\nvdxt.exe'
 Global $delete_nvdxt = 1 ; delete the extracted file unless it wasn't already there!
 
 ; ----------------- THE SCRIPT -----------------
-GUICreate ( $WINDOW_NAME,500,100)
+$GUI = GUICreate ( $WINDOW_NAME,500,100)
 GUISetState (@SW_SHOW)
 ; generic text
 $maintext = GUICtrlCreateLabel("Working...", 10, 10, 480, 60, $SS_CENTER)
@@ -37,6 +37,9 @@ If Not FileExists (@ScriptDir & "\cube#0px.tga") Then
 	IntroFunc()
 	Sleep(10000)
 Else ; NO CUBEMAPS
+	; set window name with the folder name
+	$q = StringTrimLeft(@ScriptDir, StringInStr(@ScriptDir, "\", 0, -1))
+	WinSetTitle( $GUI, "", $WINDOW_NAME & " - " & $q )
 	; install the converter
 	if Not FileExists(@ScriptDir & "\nvdxt.exe") Then
 		If Not FileInstall('nvdxt.exe', $sNvdxt, 1) Then
@@ -178,7 +181,7 @@ Func MakeDDSCubemaps()
 		
 		GUICtrlSetData( $updtexta, "Saving single DDS cubemap:" )
 		GUICtrlSetData( $updtextb, $cmap_name & ".dds" )
-		Sleep( 750 )
+		Sleep( 500 )
 		
 		$b = 0
 		While $b < 6
