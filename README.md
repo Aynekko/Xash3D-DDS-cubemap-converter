@@ -1,4 +1,4 @@
-[DOWNLOAD](https://github.com/Aynekko/Xash3D-DDS-cubemap-converter/raw/refs/heads/main/cubemap%20converter.exe)<br />
+[DOWNLOAD](https://github.com/Aynekko/Xash3D-DDS-cubemap-converter/releases/tag/latest)<br />
 
 Screenshots:<br />
 <img width="502" height="127" alt="image" src="https://github.com/user-attachments/assets/7e6d5d68-da26-4578-a7b4-3c00cc6f6eb4" /><br />
